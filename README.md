@@ -4,18 +4,19 @@ Introducing our FrudAnlyz App – a cutting-edge investigation and analysis fron
 
 # React Application
 
-### Download App 
+### Download App
 
-``` git clone https://github.com/MalithMadusankha/investigation-fe.git ```
+`git clone https://github.com/MalithMadusankha/investigation-fe.git`
 
 ### Install App
-``` yarn install ```
+
+`yarn install`
 
 ### Start App
-``` yarn start ```
+
+`yarn start`
 
 ### Screen Shots
-
 
 ![Home](https://github.com/MalithMadusankha/investigation-fe/assets/78203677/cd81bb5a-0b4f-41a3-8d9e-ef4fa1e7b728)
 
@@ -42,5 +43,3 @@ Introducing our FrudAnlyz App – a cutting-edge investigation and analysis fron
 ![Login](https://github.com/MalithMadusankha/investigation-fe/assets/78203677/cb54e9a7-1be5-41c8-81ca-6d7a5324c05e)
 
 ![Register](https://github.com/MalithMadusankha/investigation-fe/assets/78203677/9f42e04b-e328-4cde-ace1-ad39a475b6cb)
-
-

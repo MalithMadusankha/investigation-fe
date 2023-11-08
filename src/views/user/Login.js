@@ -110,7 +110,7 @@ const Login = () => {
                   />
                 </InputGroup>
               </FormGroup>
-              <Row className="mx-5 mt-5">
+              <Row className=" mt-5">
                 <Col>
                   <Link className="btn btn-success" to="/auth/register">
                     Regiter
