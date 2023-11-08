@@ -1,4 +1,4 @@
-![Home](https://github.com/MalithMadusankha/investigation-fe/assets/78203677/04b31a9d-f104-4e09-b99b-a1cf4e318937)# investigation-fe
+# investigation-fe
 
 Introducing our FrudAnlyz App – a cutting-edge investigation and analysis front-end application designed to empower you in the realm of complaint management. With this tool, you gain the ability to not only handle and oversee complaints effectively but also to harness the predictive power of data. Our application goes beyond the surface, providing insights into the potential for fraudulent activities in a city. Whether you're interested in anticipating the number of fraud cases in a specific location for the upcoming year or identifying the city with the highest historical incidents, our application is your one-stop solution. Unlock the potential of data-driven decision-making and streamline your complaint management processes with our innovative tool.
 
