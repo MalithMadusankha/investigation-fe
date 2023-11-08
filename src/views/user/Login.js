@@ -1,10 +1,9 @@
 // reactstrap components
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
   FormGroup,
   Form,
@@ -12,8 +11,9 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  Row,
   Col,
+  Alert,
+  Row,
 } from "reactstrap";
 import { SignIn } from "./userService";
 
@@ -34,11 +34,19 @@ const Login = () => {
 
     try {
       SignIn(email, password);
-      console.error("res");
-      setIsLoading(false);
-      setIsError(false);
-      setIsSuccess(true);
-      history.push("/patient");
+
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsError(false);
+        setIsSuccess(true);
+        const userString = localStorage.getItem("user");
+        const user = JSON.parse(userString);
+        if (userString || user) {
+          history.push("/inv/index");
+        } else {
+          history.push("/admin/index");
+        }
+      }, 2000);
     } catch (error) {
       setIsSuccess(false);
       setIsLoading(false);
@@ -50,11 +58,27 @@ const Login = () => {
   return (
     <>
       <Col lg="5" md="7">
-        <Card className="bg-secondary shadow border-0 mt-8">
+        <Card className="bg-translucent-success shadow border-0 mt-5">
           <CardBody className="px-lg-5 py-lg-5">
-            <div className="text-center text-muted mb-5">
-              <h2> Sign in with credentials</h2>
+            <div className="text-center  mb-5">
+              <h1 className="text-white"> Sign In </h1>
             </div>
+            {/* Alerts */}
+            {isLoading ? (
+              <Alert color="primary"> Loading . . .</Alert>
+            ) : isSuccess ? (
+              <Alert color="success"> Successfully Login</Alert>
+            ) : (
+              isError && (
+                <div>
+                  {errMsage.map((err, index) => (
+                    <Row key={index}>
+                      <Alert color="danger"> {err}</Alert>
+                    </Row>
+                  ))}
+                </div>
+              )
+            )}
             <Form role="form" onSubmit={handleSubmit}>
               <FormGroup className="mb-3">
                 <InputGroup className="input-group-alternative">
@@ -86,11 +110,18 @@ const Login = () => {
                   />
                 </InputGroup>
               </FormGroup>
-              <div className="text-center">
-                <Button className="my-4" color="primary" type="submit">
-                  Sign in
-                </Button>
-              </div>
+              <Row className="mx-5 mt-5">
+                <Col>
+                  <Link className="btn btn-success" to="/auth/register">
+                    Regiter
+                  </Link>
+                </Col>
+                <Col>
+                  <Button color="primary" type="submit">
+                    Sign in
+                  </Button>
+                </Col>
+              </Row>
             </Form>
           </CardBody>
         </Card>

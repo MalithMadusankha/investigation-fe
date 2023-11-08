@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
@@ -8,22 +8,20 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
 
-const Admin = (props) => {
+const InvestigatorLayout = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();
-  const [rou, setRou] = useState([]);
 
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     mainContent.current.scrollTop = 0;
-    routesToSidebar();
     console.log(props);
   }, [location, props]);
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
+      if (prop.layout === "/inv") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -49,22 +47,13 @@ const Admin = (props) => {
     return "Brand";
   };
 
-  const routesToSidebar = () => {
-    let rout = [];
-    for (let i = 0; i < routes.length; i++) {
-      if (routes[i].layout === "/admin") rout.push(routes[i]);
-    }
-
-    setRou(rout);
-  };
-
   return (
     <>
       <Sidebar
         {...props}
-        routes={rou}
+        routes={routes}
         logo={{
-          innerLink: "/admin/index",
+          innerLink: "/inv/index",
           imgSrc: require("../assets/img/brand/logo1.png"),
           imgAlt: "...",
         }}
@@ -76,7 +65,7 @@ const Admin = (props) => {
         />
         <Switch>
           {getRoutes(routes)}
-          <Redirect from="*" to="/admin/index" />
+          <Redirect from="*" to="/inv/index" />
         </Switch>
         <Container fluid></Container>
       </div>
@@ -84,4 +73,4 @@ const Admin = (props) => {
   );
 };
 
-export default Admin;
+export default InvestigatorLayout;

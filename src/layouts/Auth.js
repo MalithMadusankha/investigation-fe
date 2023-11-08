@@ -9,12 +9,12 @@ const Auth = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();
 
-  React.useEffect(() => {
-    document.body.classList.add("bg-gradient-info");
-    return () => {
-      document.body.classList.remove("bg-gradient-info");
-    };
-  }, []);
+  // React.useEffect(() => {
+  //   document.body.classList.add("bg-gradient-info");
+  //   return () => {
+  //     document.body.classList.remove("bg-gradient-info");
+  //   };
+  // }, []);
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -39,11 +39,20 @@ const Auth = (props) => {
 
   return (
     <>
-      <div className="main-content" ref={mainContent}>
+      <div
+        className="header pb-8  d-flex align-items-center"
+        style={{
+          minHeight: "300px",
+          backgroundImage: "url(" + require("../assets/img/bg2.jpg") + ")",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+        }}
+        ref={mainContent}
+      >
         {/* <AuthNavbar /> */}
 
         {/* Page content */}
-        <Container className="mt-5 pb-5">
+        <Container className=" ">
           <Row className="justify-content-center">
             <Switch>
               {getRoutes(routes)}

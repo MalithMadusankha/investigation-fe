@@ -1,10 +1,18 @@
 // reactstrap components
-import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
-
+import { Container } from "reactstrap";
+const COVER =
+  "https://img.freepik.com/premium-photo/hi-tech-hud-digital-display-holographic-background-motion-graphics-technology-concept_24070-578.jpg?w=1060";
 const Header = () => {
+  const backgroundStyle = {
+    backgroundImage: `url(${COVER})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    minHeight: "50vh",
+  };
   return (
     <>
-      <div className="header bg-gradient-info pb-8 pt-5 pt-md-8">
+      <div style={backgroundStyle}>
         <Container fluid></Container>
       </div>
     </>
