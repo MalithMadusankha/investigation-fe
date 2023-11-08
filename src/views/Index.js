@@ -211,7 +211,7 @@ const Index = (props) => {
                     <th scope="col">Complain</th>
                     <th scope="col">Location</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Complain Date</th>
+                    <th scope="col">Date</th>
                     <th scope="col">Progress</th>
                     <th scope="col" />
                   </tr>
